@@ -21,6 +21,7 @@ export const useCreateThreadContext = <
   const threadId = thread?.id;
   const threadReplyCount = thread?.reply_count;
   const threadMessagesStr = reduceMessagesToString(threadMessages);
+  const threadLatestReactions = thread?.latest_reactions
 
   const threadContext: ThreadContextValue<StreamChatGenerics> = useMemo(
     () => ({
@@ -39,6 +40,7 @@ export const useCreateThreadContext = <
       allowThreadMessagesInChannel,
       threadHasMore,
       threadId,
+      threadLatestReactions,
       threadLoadingMore,
       threadMessagesStr,
       threadReplyCount,
